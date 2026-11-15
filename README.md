@@ -1,6 +1,4 @@
 # Careers Portal Automation
-Technical Assessment for TalentEra (A product of Bayt.com)
-
 Playwright + TypeScript automation of the job application flow on the careers portal (Page Object Model).
 
 - [Walkthrough](docs/walkthrough.md): setup, structure, and how the code is written
