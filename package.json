@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hani-fayed7/Bupa-Arabia.git"
+    "url": "git+https://github.com/hani-fayed7/Careers-Portal-Automation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/hani-fayed7/Bupa-Arabia/issues"
+    "url": "https://github.com/hani-fayed7/Careers-Portal-Automation/issues"
   },
-  "homepage": "https://github.com/hani-fayed7/Bupa-Arabia#readme",
+  "homepage": "https://github.com/hani-fayed7/Careers-Portal-Automation#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.2",
