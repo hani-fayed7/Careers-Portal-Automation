@@ -1,12 +1,12 @@
-# Bupa-Arabia
+# Careers Portal Automation
 Technical Assessment for TalentEra (A product of Bayt.com)
 
-Playwright + TypeScript automation of the job application flow on https://careers.bupa.com.sa/ (Page Object Model).
+Playwright + TypeScript automation of the job application flow on the careers portal (Page Object Model).
 
 - [Walkthrough](docs/walkthrough.md): setup, structure, and how the code is written
 - [Status](docs/status.md): where each feature stands and what's verified
 - [Roadmap](docs/roadmap.md): milestones done and what comes next
-- [Test automation plan](docs/latex/test-automation-plan.tex) (LaTeX): part 2, a testing strategy for the whole careers portal (careers.bupa.com.sa only), based on a full tour.
+- [Test automation plan](docs/latex/test-automation-plan.tex) (LaTeX): part 2, a testing strategy for the whole careers portal, based on a full tour.
 
 ## Quick start
 
