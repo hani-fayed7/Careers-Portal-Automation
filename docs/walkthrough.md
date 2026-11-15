@@ -14,7 +14,7 @@ Follow the [Quick start in the README](../README.md#quick-start) first. Then:
 
 | Variable | Meaning |
 |---|---|
-| `BASE_URL` | Site root including the language, `https://careers.bupa.com.sa/en/`. Keep the trailing slash. |
+| `BASE_URL` | Required. The careers portal root including the language, e.g. `https://<careers-portal>/en/`. Keep the trailing slash. |
 | `USER_EMAIL`, `USER_PASSWORD` | Test account. It needs a CV on file. |
 | `USER_EMAIL_<BROWSER>`, `USER_PASSWORD_<BROWSER>` | Optional per-browser account, e.g. `USER_EMAIL_FIREFOX`. Needed to run logged-in specs on several browsers together: the site keeps one active session per account. |
 | `APPLY_MODE` | `apply-withdraw` (default), `dry-run` (never submits), or `apply` (keeps the application). |
@@ -171,6 +171,6 @@ When the site shows the same control twice with the same target, such as the two
 
 - **Failed runs:** run `npm run report` and open the failed test's **trace**. It shows every step, a DOM snapshot, network calls and console output. Steps in `apply-job.spec.ts` are named with `test.step`, so the report reads like the scenario.
 - **Step through by hand:** use `npx playwright test --headed --debug`, or add `await page.pause()` where you want to stop.
-- **Selectors:** `npx playwright codegen https://careers.bupa.com.sa/en/login/` helps explore them. Rewrite its output to follow section 5 before adding it to a page object.
+- **Selectors:** `npx playwright codegen <BASE_URL>login/` helps explore them. Rewrite its output to follow section 5 before adding it to a page object.
 - **"No valid saved session":** run `npm run auth`.
 - **Poking at logged-in pages from a script:** load `playwright/.auth/chromium.json` into a `Desktop Chrome` context (each session only works with the browser profile that created it). Don't log in again, because extra logins mean extra CAPTCHAs.

@@ -72,7 +72,7 @@ export const env = {
    * new URL('login/', '…/en/') → …/en/login/, but a leading slash ('/login/') would drop "/en".
    */
   get baseUrl(): string {
-    const url = process.env.BASE_URL?.trim() || 'https://careers.bupa.com.sa/en/';
+    const url = required('BASE_URL');
     return url.endsWith('/') ? url : `${url}/`;
   },
   /**

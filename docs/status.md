@@ -2,7 +2,7 @@
 
 Snapshot of where the automation stands. Last updated: **2026-09-28**.
 
-**Scope:** the careers portal https://careers.bupa.com.sa/ only. The corporate site bupa.com.sa is out of scope.
+**Scope:** the careers portal only. The corporate site is out of scope.
 - **Part 1:** automate the end-to-end job application flow (log in, find a job, apply), built with Playwright + TypeScript and the Page Object Model.
 - **Part 2:** explore the whole portal and propose a test automation plan for it.
 
@@ -69,8 +69,8 @@ Statuses:
 
 | Item | Status | Where |
 |---|---|---|
-| Tour of careers.bupa.com.sa: public pages, search, Advanced Search, job pages, registration and forgot-password forms, the Arabic site, mobile, and the candidate account | Done | the plan, section 2 ("What my tour showed") |
-| Test automation plan: objective, scope, approach, tools, prioritization, framework, execution, reporting, phases, conclusion | Done | [latex/test-automation-plan.tex](latex/test-automation-plan.tex); a PDF copy in the `Technical Assessment` folder (`Test-Automation-Plan-Bupa-Concise.pdf`) |
+| Tour of the careers portal: public pages, search, Advanced Search, job pages, registration and forgot-password forms, the Arabic site, mobile, and the candidate account | Done | the plan, section 2 ("What my tour showed") |
+| Test automation plan: objective, scope, approach, tools, prioritization, framework, execution, reporting, phases, conclusion | Done | [latex/test-automation-plan.tex](latex/test-automation-plan.tex); a PDF copy in the `Technical Assessment` folder (`Test-Automation-Plan-…-Concise.pdf`) |
 | Interview prep pack (Word) | Done | outside the repo, in the `Technical Assessment` folder |
 | Building the plan's tests (API collections, Advanced Search, Job Alerts, forgot password…) | Not started (a proposal) | the plan, section 9 |
 

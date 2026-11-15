@@ -49,7 +49,7 @@ These shaped every milestone:
 - The cross-browser run revealed the one-session-per-account rule. Added per-browser accounts (`USER_EMAIL_<BROWSER>`), a setup guard against shared accounts, and `ensureLoggedIn()` to fail fast when a session was ended.
 
 ### Milestone 8: Part 2, portal tour and test automation plan
-- A full tour of **careers.bupa.com.sa** only (bupa.com.sa is out of scope), in English and Arabic, on desktop and mobile, including the candidate account (read-only).
+- A full tour of the **careers portal** only (the corporate site is out of scope), in English and Arabic, on desktop and mobile, including the candidate account (read-only).
 - Technical checks: accessibility (axe), load timings, security headers, robots.txt, sitemap and background calls.
 - A first Markdown plan and a longer formal LaTeX draft, both since removed and replaced by the plan below.
 

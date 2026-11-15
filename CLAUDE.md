@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A technical assessment for Talentera (Bayt.com), about the **live** careers portal https://careers.bupa.com.sa/ (a Talentera deployment). **Scope is the careers portal only.** The corporate site bupa.com.sa is out of scope.
+A technical assessment for Talentera (Bayt.com), about a **live** careers portal (a Talentera deployment). **Scope is the careers portal only.** The company's corporate site is out of scope. The portal URL is set via `BASE_URL` in `.env` and is deliberately not written in the repo (outside `docs/latex/`).
 - **Part 1 (the code):** Playwright + TypeScript end-to-end automation of logging in, then searching for a job, applying, verifying and withdrawing. The Page Object Model is used throughout.
 - **Part 2 (a document):** [docs/latex/test-automation-plan.tex](docs/latex/test-automation-plan.tex) is the only plan and the version to submit. It has a cover page, a contents page and a body of about 6 pages, in the required 10-section outline. The earlier Markdown plan and the longer formal draft were removed.
   - It's written strictly in the author's first person, so keep it that way in every edit.
@@ -29,7 +29,7 @@ BROWSERS=chromium,firefox,webkit npm test        # cross-browser run: needs one 
 SLOW_MO=500 npm run test:headed                  # slowed-down visible run for demos
 ```
 
-Config comes from `.env` (copy `.env.example`): `USER_EMAIL`, `USER_PASSWORD` (optionally per browser: `USER_EMAIL_<BROWSER>`), `BROWSERS`, `SLOW_MO`, `APPLY_MODE` (`apply-withdraw` default | `dry-run` | `apply`), `MAX_JOB_ATTEMPTS`, `BASE_URL`. `tests/utils/env.ts` is the only place that reads them. It validates lazily, through getters.
+Config comes from `.env` (copy `.env.example`): `USER_EMAIL`, `USER_PASSWORD` (optionally per browser: `USER_EMAIL_<BROWSER>`), `BROWSERS`, `SLOW_MO`, `APPLY_MODE` (`apply-withdraw` default | `dry-run` | `apply`), `MAX_JOB_ATTEMPTS`, `BASE_URL` (required). `tests/utils/env.ts` is the only place that reads them. It validates lazily, through getters.
 
 ## Architecture
 
@@ -69,7 +69,7 @@ Login state is the server-rendered `<body>` class `is_logged_1` / `is_logged_0` 
 
 ## Working on the live site
 
-- Real applications reach Bupa HR. Run non-dry-run applies only when the user asks. Use `APPLY_MODE=dry-run` to check changes to the apply flow.
+- Real applications reach the careers portal's HR team. Run non-dry-run applies only when the user asks. Use `APPLY_MODE=dry-run` to check changes to the apply flow.
 - Avoid repeated or failed logins: they risk extra CAPTCHA friction, and a new login ends the saved session (one session per account). Probe logged-in pages by loading a saved `playwright/.auth/<browser>.json` into a context with that browser's device profile. Keep probes read-only: no saving, applying, editing or logging out.
 - `workers: 1`, `retries: 0` on purpose: one real account, and a real side effect on every run.
 
@@ -77,10 +77,10 @@ Login state is the server-rendered `<body>` class `is_logged_1` / `is_logged_0` 
 
 - `docs/status.md`, `docs/roadmap.md` and `docs/walkthrough.md` describe the current state, the milestones and the conventions. `docs/latex/test-automation-plan.tex` is the part 2 deliverable.
 - **Whenever behaviour, commands, settings or findings change, update those docs and this file in the same change.** The user expects the docs to stay current without being reminded.
-- The current interview guide is `Interview-Preparation-Guide-Bupa.docx`, with a PDF copy, in the `Technical Assessment` folder outside the repo. It covers Part 1 (the code) and Part 2 (the plan).
+- The current interview guide is the `Interview-Preparation-Guide` .docx, with a PDF copy, in the `Technical Assessment` folder outside the repo. It covers Part 1 (the code) and Part 2 (the plan).
   - It's generated from Markdown, so when the code or the plan changes, update the guide in the same change.
-  - The older `Interview-Prep-Bupa-Automation` pack is out of date.
+  - The older `Interview-Prep-…-Automation` pack is out of date.
 - The LaTeX plan compiles with MiKTeX: run `pdflatex test-automation-plan.tex` twice, so the table of contents fills in.
   - MiKTeX's "unsupported Windows" line is only a warning.
   - Don't load `xcolor` with the `[table]` option: the installed `colortbl` is newer than `array` and breaks `tabularx`.
-  - The build files and the PDF in `docs/latex/` are gitignored. A copy of the PDF goes to the `Technical Assessment` folder, as `Test-Automation-Plan-Bupa-Concise.pdf`.
+  - The build files and the PDF in `docs/latex/` are gitignored. A copy of the PDF goes to the `Technical Assessment` folder, as `Test-Automation-Plan-…-Concise.pdf`.

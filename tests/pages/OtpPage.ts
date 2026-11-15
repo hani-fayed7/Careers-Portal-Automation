@@ -3,7 +3,7 @@ import { BasePage } from './BasePage';
 
 /**
  * Verification code step shown after a successful email + password submit.
- * The 4-digit code is emailed from noreply@careers.bupa.com.sa ("Your Bupa Verification Code").
+ * The 4-digit code is emailed by the careers portal (a "Verification Code" email).
  *
  * The step is protected by a reCAPTCHA v2 checkbox, which is never automated: a person
  * completes it (see completeByHand). In a test environment where the CAPTCHA is disabled or uses
